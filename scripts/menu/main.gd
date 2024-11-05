@@ -13,7 +13,8 @@ func verify_card() -> void:
 	pass
 
 
-
+# Also feel free to make your own functions here but
+# but don't touch the other ones created already
 
 
 
