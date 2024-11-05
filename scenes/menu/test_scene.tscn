@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3hryejy8qa4h"]
+
+[ext_resource type="Script" path="res://scripts/menu/test_scene.gd" id="1_b2vdf"]
+[ext_resource type="PackedScene" uid="uid://2xpt3rfq71ni" path="res://scenes/ui/green_button.tscn" id="2_m5vci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd0bg"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2vdf")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -40.0
+offset_right = 1202.0
+offset_bottom = 688.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kd0bg")
+
+[node name="Output" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 1146.0
+offset_bottom = 594.0
+
+[node name="Lines" type="VBoxContainer" parent="Output"]
+layout_mode = 2
+
+[node name="SampleLabel" type="Label" parent="Output/Lines"]
+layout_mode = 2
+
+[node name="ExitButton" parent="." instance=ExtResource("2_m5vci")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -50.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Exit Testing"
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

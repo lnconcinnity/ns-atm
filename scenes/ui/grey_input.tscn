@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0ycjs43d2t8x"]
+
+[ext_resource type="Texture2D" uid="uid://be5wekxc1s0p1" path="res://assets/sprites/input_outline_rectangle.svg" id="1_55ii1"]
+[ext_resource type="FontFile" uid="uid://bj1h2ovsv1xmy" path="res://assets/fonts/Poppins-Medium.ttf" id="2_a5bfw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgdsy"]
+texture = ExtResource("1_55ii1")
+texture_margin_left = 8.0
+texture_margin_top = 3.0
+texture_margin_right = 8.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="Theme" id="Theme_5xk43"]
+default_font = ExtResource("2_a5bfw")
+default_font_size = 35
+LineEdit/colors/caret_color = Color(0.314315, 0.314317, 0.314317, 1)
+LineEdit/colors/font_color = Color(0.509804, 0.521569, 0.576471, 1)
+LineEdit/colors/font_placeholder_color = Color(0.605276, 0.605274, 0.605274, 0.6)
+LineEdit/font_sizes/font_size = 25
+LineEdit/styles/normal = SubResource("StyleBoxTexture_tgdsy")
+
+[node name="GreyInput" type="LineEdit"]
+offset_right = 67.0625
+offset_bottom = 31.0
+theme = SubResource("Theme_5xk43")

@@ -1,0 +1,27 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="NOT SUS ATM MACHINE :)"
+config/description="challenge for jr devs #2"
+config/version="69.69.69.69.69.69.69.69.69-sigma"
+run/main_scene="res://scenes/menu/main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://assets/sprites/icon.png"
+
+[autoload]
+
+TestService="*res://services/test_service.tscn"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

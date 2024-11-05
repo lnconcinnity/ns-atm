@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://2xpt3rfq71ni"]
+
+[ext_resource type="Theme" uid="uid://ntia3w00gve8" path="res://themes/green_button.tres" id="1_rvteu"]
+
+[node name="GreenButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_rvteu")
+text = "click me!"
