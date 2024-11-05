@@ -75,3 +75,7 @@ You can evaluate the correctness of your code using the `secret dev button` at t
 ## How to Submit
 
 You may directly send your `main.gd` file to the Senior Developer (**@audr.\_**) in Discord.
+
+## Credits
+
+Special thanks to [Harvard's CS50x](https://cs50.harvard.edu/x)! <3
