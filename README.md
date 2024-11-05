@@ -66,7 +66,7 @@ If your program behaves incorrectly on some inputs (or doesn’t compile at all)
 
 ## Sample Video
 
-![pls wait for the video to download](assets/videos/sample_video.mp4)
+https://github.com/user-attachments/assets/c629cc8d-cf8a-499a-b54e-9f84f1cb3b9e
 
 ## How to Test Your Code
 
