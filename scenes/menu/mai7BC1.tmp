@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhbx1mab1sa6a"]
+
+[ext_resource type="Script" path="res://scripts/menu/main.gd" id="1_0f7ms"]
+[ext_resource type="Texture2D" uid="uid://b1d3f4grh5nmc" path="res://assets/sprites/background.jpg" id="2_4hmrb"]
+[ext_resource type="FontFile" uid="uid://dtw1acuih1xcy" path="res://assets/fonts/Kenney Future.ttf" id="3_k6qrj"]
+[ext_resource type="PackedScene" uid="uid://d0ycjs43d2t8x" path="res://scenes/ui/grey_input.tscn" id="4_5qnc5"]
+[ext_resource type="PackedScene" uid="uid://ddhai52gnxjtk" path="res://scenes/ui/blue_button.tscn" id="5_v4fbv"]
+[ext_resource type="PackedScene" uid="uid://2xpt3rfq71ni" path="res://scenes/ui/green_button.tscn" id="6_2al6y"]
+[ext_resource type="FontFile" uid="uid://bj1h2ovsv1xmy" path="res://assets/fonts/Poppins-Medium.ttf" id="7_ilihw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c636r"]
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0f7ms")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_right = 1438.0
+offset_bottom = 648.0
+texture = ExtResource("2_4hmrb")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -491.5
+offset_top = 30.0
+offset_right = 491.5
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_k6qrj")
+theme_override_font_sizes/font_size = 69
+text = "NOT SUS ATM MACHINE :)"
+
+[node name="CardInput" parent="." instance=ExtResource("4_5qnc5")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -29.0
+offset_right = 205.5
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Card Number"
+
+[node name="VerifyButton" parent="." instance=ExtResource("5_v4fbv")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 46.0
+offset_right = 89.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Verify Card"
+
+[node name="DevButton" parent="." instance=ExtResource("6_2al6y")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -50.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "secret dev button"
+
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -134.0
+offset_right = 169.5
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_ilihw")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_c636r")
+text = "Please put your credit card 
+number down here."
+
+[node name="Output" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = 151.0
+offset_right = 0.5
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_ilihw")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_c636r")
+
+[node name="OutputTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="button_up" from="VerifyButton" to="." method="_on_verify_button_button_up"]
+[connection signal="button_up" from="DevButton" to="." method="_on_dev_button_button_up"]
+[connection signal="timeout" from="OutputTimer" to="." method="_on_output_timer_timeout"]
